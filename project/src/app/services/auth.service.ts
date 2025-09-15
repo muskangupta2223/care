@@ -1,8 +1,23 @@
 import { Injectable } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, user } from '@angular/fire/auth';
-import { Firestore, doc, setDoc, getDoc } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+
+// ✅ Firebase Auth
+import {
+  Auth,
+  user,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut
+} from '@angular/fire/auth';
+
+// ✅ Firestore
+import {
+  Firestore,
+  doc,
+  setDoc,
+  getDoc
+} from '@angular/fire/firestore';
 
 export interface User {
   uid: string;
@@ -19,17 +34,18 @@ export interface User {
   providedIn: 'root'
 })
 export class AuthService {
+  // 👇 this gives you a reactive observable of Firebase user
   user$ = user(this.auth);
   currentUser: User | null = null;
 
   constructor(
-    private auth: Auth,
-    private firestore: Firestore,
+    private auth: Auth,       // ✅ works because `provideAuth(() => getAuth())` is in main.ts
+    private firestore: Firestore, // ✅ works because `provideFirestore(() => getFirestore())` is in main.ts
     private router: Router
   ) {
-    this.user$.subscribe(async (user) => {
-      if (user) {
-        const userDoc = await getDoc(doc(this.firestore, 'users', user.uid));
+    this.user$.subscribe(async (firebaseUser) => {
+      if (firebaseUser) {
+        const userDoc = await getDoc(doc(this.firestore, 'users', firebaseUser.uid));
         if (userDoc.exists()) {
           this.currentUser = userDoc.data() as User;
         }
@@ -43,14 +59,14 @@ export class AuthService {
     try {
       const { password, ...userInfo } = userData;
       const credential = await createUserWithEmailAndPassword(this.auth, userData.email, password);
-      
-      const user: User = {
+
+      const newUser: User = {
         uid: credential.user.uid,
         ...userInfo
       };
 
-      await setDoc(doc(this.firestore, 'users', credential.user.uid), user);
-      this.currentUser = user;
+      await setDoc(doc(this.firestore, 'users', credential.user.uid), newUser);
+      this.currentUser = newUser;
       this.router.navigate(['/dashboard']);
       
       return { success: true };

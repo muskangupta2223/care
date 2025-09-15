@@ -1,0 +1,61 @@
+.login-content {
+  --background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.login-container {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.login-card ion-card-title {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.login-card ion-item {
+  margin-bottom: 15px;
+  --border-radius: 10px;
+  --background: #f8f9fa;
+}
+
+.login-submit-btn {
+  margin-top: 20px;
+  --background: #4CAF50;
+  --border-radius: 25px;
+  height: 50px;
+  font-weight: 600;
+}
+
+.error-message {
+  margin: 15px 0;
+  text-align: center;
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.signup-link a {
+  color: #667eea;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    padding: 15px;
+  }
+}

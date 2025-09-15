@@ -1,0 +1,145 @@
+.emergency-content {
+  --background: #f5f6fa;
+}
+
+.emergency-container {
+  padding: 20px;
+}
+
+.emergency-call-section {
+  margin-bottom: 30px;
+}
+
+.emergency-card {
+  border-radius: 20px;
+  border: 2px solid #ff4444;
+  box-shadow: 0 5px 20px rgba(255, 68, 68, 0.2);
+}
+
+.emergency-info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.emergency-info h2 {
+  color: #ff4444;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 10px 0 5px 0;
+}
+
+.emergency-info p {
+  color: #666;
+  margin: 0;
+}
+
+.emergency-btn {
+  --border-radius: 25px;
+  height: 60px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.contacts-section h3 {
+  color: #333;
+  margin: 0 0 20px 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.contact-card {
+  margin-bottom: 15px;
+  border-radius: 15px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+}
+
+.contact-avatar {
+  margin-right: 15px;
+  background: #667eea;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-details {
+  flex: 1;
+}
+
+.contact-details h4 {
+  margin: 0 0 5px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.relation {
+  color: #667eea;
+  font-weight: 500;
+  margin: 0 0 3px 0;
+  font-size: 0.9rem;
+}
+
+.phone {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.contact-actions ion-button {
+  --padding-start: 10px;
+  --padding-end: 10px;
+}
+
+.empty-contacts {
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+}
+
+.empty-contacts ion-icon {
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+.empty-contacts h4 {
+  font-size: 1.2rem;
+  margin: 0 0 8px 0;
+}
+
+.empty-contacts p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+.modal-content ion-item {
+  margin-bottom: 15px;
+  --border-radius: 10px;
+  --background: #f8f9fa;
+}
+
+.add-btn {
+  margin-top: 20px;
+  --background: #4CAF50;
+  --border-radius: 25px;
+  height: 50px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .emergency-container {
+    padding: 15px;
+  }
+}

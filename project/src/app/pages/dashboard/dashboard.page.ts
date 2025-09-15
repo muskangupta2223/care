@@ -3,7 +3,8 @@ import { Router } from '@angular/router';
 import { AuthService, User } from '../../services/auth.service';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonButton, IonIcon, IonGrid, IonRow, IonCol, IonButtons, IonMenuButton } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { medkit, calendar, people, call, logOut } from !;
+//import { medkit, calendar, people, call, logOut } from !;
+import { medkit, calendar, people, call, logOut } from 'ionicons/icons';
 
 @Component({
   selector: 'app-dashboard',
